@@ -1,8 +1,9 @@
-import "./style.css"
+import "./style.scss"
 
+import App from "./App"
 import React from "react"
 import ReactDOM from "react-dom"
+
 const devRoot = document.querySelector("#_dev_auth")
 
-const d = <h1>Hello</h1>
-ReactDOM.render(d, devRoot)
+ReactDOM.render(<App />, devRoot)
