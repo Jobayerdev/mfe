@@ -17,8 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: ls
-      - run: cd packages/container
       - run: npm install
       - run: npm run build
       - name: "Deploy to Vercel"
