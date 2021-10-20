@@ -1,8 +1,12 @@
+import { AppProvider } from "@shared/context"
+import AuthRoutes from "@modules/auth/routes"
 import React from "react"
 
 const App = () => {
 	return (
-		<div className="text-white font-bold p-10">Hello I'm from Auth APP.tsx</div>
+		<AppProvider>
+			<AuthRoutes />
+		</AppProvider>
 	)
 }
 

@@ -4,6 +4,15 @@ import App from "./App"
 import React from "react"
 import ReactDOM from "react-dom"
 
-const devRoot = document.querySelector("#_dev_auth")
+const mount = (el: Element) => {
+	ReactDOM.render(<App />, el)
+}
 
-ReactDOM.render(<App />, devRoot)
+if (process.env.NODE_ENV === "development") {
+	const devRoot = document.querySelector("#_dev_auth")
+	if (devRoot) {
+		mount(devRoot)
+	}
+}
+
+export { mount }
