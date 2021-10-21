@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom"
 import { ErrorBoundary } from "react-error-boundary"
 import { QueryClientProvider } from "react-query"
 import React from "react"
@@ -34,7 +33,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
 			}>
 			<ErrorBoundary FallbackComponent={ErrorFallback}>
 				<QueryClientProvider client={queryClient}>
-					<BrowserRouter>{children}</BrowserRouter>
+					{children}
 				</QueryClientProvider>
 			</ErrorBoundary>
 		</React.Suspense>

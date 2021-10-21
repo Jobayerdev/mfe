@@ -1,17 +1,23 @@
 import { Navigate, useRoutes } from "react-router-dom"
 
-import AuthPage from "../../@features/AuthPage"
+import AuthApp from "../../@features/AuthApp"
+import LandingPage from "../../@features/LandingPage"
+import PricingPage from "../../@features/PricingPage"
 import React from "react"
 
 const PublicRoutes = () => {
 	return useRoutes([
 		{
 			path: "",
-			element: <Navigate to="/auth" />,
+			element: <LandingPage />,
 		},
 		{
 			path: "auth",
-			element: <AuthPage />,
+			element: <AuthApp />,
+		},
+		{
+			path: "pricing",
+			element: <PricingPage />,
 		},
 		{
 			path: "*",
