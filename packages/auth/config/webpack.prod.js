@@ -6,7 +6,8 @@ const commonConfig = require("./webpack.common")
 const devConfig = {
 	mode: "development",
 	output: {
-		publicPath: "http://localhost:8081/",
+		filename: "[name].[contenthash].js",
+		publicPath: "/auth/latest/",
 	},
 	devServer: {
 		port: 8081,
