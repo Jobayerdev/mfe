@@ -3,11 +3,12 @@ const packageJson = require("../package.json")
 const { merge } = require("webpack-merge")
 const commonConfig = require("./webpack.common")
 
-const authProductionUrl = process.env.AUTH_PRODUCTION_URL
+const authProductionDomain = process.env.AUTH_PRODUCTION_URL
 
 const devConfig = {
 	mode: "production",
 	output: {
+		filename: "[name].[contenthash].js",
 		publicPath: "/",
 	},
 	devServer: {
@@ -20,7 +21,7 @@ const devConfig = {
 		new ModuleFederationPlugin({
 			name: "container",
 			remotes: {
-				auth: `auth@${authProductionUrl}/remoteEntry.js`,
+				auth: `auth@${authProductionDomain}/remoteEntry.js`,
 			},
 			shared: packageJson.dependencies,
 		}),
