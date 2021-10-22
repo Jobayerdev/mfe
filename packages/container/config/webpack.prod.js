@@ -3,7 +3,7 @@ const packageJson = require("../package.json")
 const { merge } = require("webpack-merge")
 const commonConfig = require("./webpack.common")
 
-const authProductionDomain = process.env.AUTH_PRODUCTION_URL
+const authProductionDomain = `https://stg-mfe-auth.netlify.app`
 
 const devConfig = {
 	mode: "production",
