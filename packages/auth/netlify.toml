@@ -1,4 +1,6 @@
+[Settings]
+ID = "7ed3ac46-d921-405c-9db0-389938a1993f"
+
 [build]
-    command = "ls"
-    publish = "dist"
-    functions = "built-lambda"
+  base    = "./"
+  publish = "./dist"
