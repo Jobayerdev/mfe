@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+        run: npm run build
       - name: Publish
         uses: netlify/actions/cli@master
         with:
