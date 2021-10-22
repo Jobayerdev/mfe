@@ -1,6 +1,0 @@
-[Settings]
-ID = "7ed3ac46-d921-405c-9db0-389938a1993f"
-
-[build]
-  base    = "./"
-  publish = "./dist"
