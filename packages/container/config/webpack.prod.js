@@ -1,8 +1,11 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin")
+const packageJson = require("../package.json")
 const { merge } = require("webpack-merge")
 const commonConfig = require("./webpack.common")
 
-const prodConfig = {
+const AUTH_DOMAIN = "https://stg-mfe-auth.netlify.app"
+
+const devConfig = {
 	mode: "production",
 	output: {
 		filename: "[name].[contenthash].js",
@@ -16,10 +19,11 @@ const prodConfig = {
 		new ModuleFederationPlugin({
 			name: "container",
 			remotes: {
-				auth: `auth@https://stg-mfe-auth.netlify.app/remoteEntry.js`,
+				auth: `auth@${AUTH_DOMAIN}/remoteEntry.js`,
 			},
+			shared: packageJson.dependencies,
 		}),
 	],
 }
 
-module.exports = merge(commonConfig, prodConfig)
+module.exports = merge(commonConfig, devConfig)
