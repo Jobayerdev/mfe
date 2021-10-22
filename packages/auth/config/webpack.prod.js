@@ -7,7 +7,7 @@ const devConfig = {
 	mode: "development",
 	output: {
 		filename: "[name].[contenthash].js",
-		publicPath: "/auth/latest/",
+		publicPath: "/",
 	},
 	devServer: {
 		port: 8081,
