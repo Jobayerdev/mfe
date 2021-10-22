@@ -7,7 +7,7 @@ const devConfig = {
 	mode: "development",
 	output: {
 		filename: "[name].[contenthash].js",
-		publicPath: "/",
+		publicPath: "https://stg-mfe-auth.netlify.app/",
 	},
 	devServer: {
 		port: 8081,
